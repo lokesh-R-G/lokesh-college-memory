@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Inter", sans-serif;
+  
+  --color-cream: #FCF9F2;
+  --color-gold: #D4AF37;
+  --color-warm-orange: #E67E22;
+  --color-dark-gray: #333333;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-dark-gray font-sans selection:bg-gold/30;
+    scroll-behavior: smooth;
+  }
+}
+
+.serif {
+  font-family: var(--font-serif);
+}
+
+.letter-spacing-tight {
+  letter-spacing: -0.02em;
+}
+
+.text-reveal {
+  background: linear-gradient(to right, var(--color-dark-gray) 0%, var(--color-dark-gray) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  transition: opacity 1.2s ease;
+}
+
+.grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+  opacity: 0.05;
+  background-image: url("https://grainy-gradients.vercel.app/noise.svg");
+}
